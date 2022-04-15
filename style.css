@@ -1,21 +1,50 @@
 /* You're welcome to change any of this! */
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Fascinate+Inline&display=swap');
 * {
     box-sizing: border-box;
 }
 
 body {
     margin: 0px;
-    font-family: Arial, sans-serif;
+    font-family: 'Times New Roman', Times, serif;
+    color: #DAE0F2
+}
+h1 {
+    font-family: "Fascinate Inline", cursive; 
+    color: #F9CFF2;
+    text-transform: uppercase;
+    margin-left: 270px;
+    font-size:  5em;
+}
+
+h2 {
+    font-family: "Abril Fatface", cursive;
+    font-size: 3em;
+
+
+}
+h3 {
+    font-family:"Abril Fatface", cursive; 
+    font-size: 2em;
 }
 header, section {
     padding: 20px;
+    background-color: #52154E;
+    align-items: center;
+    
 }
 p, li {
     line-height: 1.5em;
 }
+a { 
+    color:#F9CFF2
+}
 
+#tutorials {
+    background-color: #111344;
+}
 #inspiration {
-    background-color: #F0F0F0;
+    background-color: #111344;
     padding-top: 40px;
     padding-bottom: 40px;
 }
