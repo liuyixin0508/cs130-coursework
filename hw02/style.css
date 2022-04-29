@@ -236,14 +236,20 @@ h2 {
     opacity: 1;
 }
 
-nav:hover a {
+nav a:hover {
     color: lightslategray;
 }
 
-a#Home:hover .fas.fa-home {
+#Home:hover {
+    color: lightslategray;
+}
+#Search:hover {
     color: lightslategray;
 }
 
+#YourLib:hover {
+    color: lightslategray;
+}
 /**************************/
 /* Part D: Responsive UIs */
 /**************************/
