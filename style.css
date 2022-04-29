@@ -33,7 +33,7 @@ header, section {
     align-items: center;
     
 }
-p, li {
+p, li, ul {
     line-height: 1.5em; 
     color:#F9CFF2;
 }
