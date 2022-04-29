@@ -6,13 +6,23 @@
        based on the button that was clicked.
 
 */
-const ChangeToDesertTheme = () =>{
-   document.querySelector("div.content");
+const defaultTheme = () =>{
+   document.querySelector("body").className ="";}
 
 
-const ChangeToOceanTheme =(event) => {
+const oceanTheme = () => {
+   document.querySelector("body").className = "ocean";
 }
 
-const ChangeToHighContrastTheme =(event)=> {
-
+const desertTheme = () => {
+   document.querySelector("body").className = "desert";
 }
+
+const highContrastTheme = () => {
+   document.querySelector("body").className = "high-contrast";
+}
+
+document.querySelector("#default").addEventListener("click", defaultTheme);
+document.querySelector("#ocean").addEventListener("click", oceanTheme);
+document.querySelector("#desert").addEventListener("click", desertTheme);
+document.querySelector("#high-contrast").addEventListener("click", highContrastTheme);
