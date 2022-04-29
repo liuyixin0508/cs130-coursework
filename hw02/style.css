@@ -202,6 +202,14 @@ section > div {
     width: 20%;
 }
 
+.artist-card h2 {
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    /* display:inline-block; */
+    white-space: nowrap;
+}
+
 #featured-content {
     display: flex;
     flex-direction: row;
@@ -229,11 +237,11 @@ h2 {
 }
 
 nav:hover a {
-    color: lightgray;
+    color: lightslategray;
 }
 
-a#Home:hover fasFa-home {
-    color: lightgray;
+a#Home:hover .fas.fa-home {
+    color: lightslategray;
 }
 
 /**************************/
@@ -243,17 +251,16 @@ a#Home:hover fasFa-home {
 /* Your Code Here */
 
 @media screen and (max-width: 1200px) {
-    article section {
-        width: 33.3%
+    .artist-card {
+        width: 33.3%;
     }
-
     .artist-card div {
         height: 100%;
     }
 }
 
-@media screen and (max-width:600px) {
-    article section {
+@media screen and (max-width:900px) {
+    .artist-card {
         width: 50%;
     }
 
@@ -262,12 +269,22 @@ a#Home:hover fasFa-home {
     }
 
     body {
-        grid-template-columns: 1fr;
-        grid-template-rows: auto auto;
-        grid-template-areas: "main" "bottom";
+        overflow: hidden;
+        margin: 0px;
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: auto 100px;
+        grid-template-areas:
+            "main"
+            "bottom";
         height: 100vh;
     }
 
+    header {
+        background: #111;
+        width: 100%;
+        left: 0px;
+    }
     aside {
         display: none;
     }
