@@ -33,18 +33,21 @@ header, section {
     align-items: center;
     
 }
-p, li {
-    line-height: 1.5em;
+p, li, ul {
+    line-height: 1.5em; 
+    color:#F9CFF2;
 }
-a { 
-    color:#F9CFF2
+p a {
+    color:#F9CFF2;
 }
 
 #tutorials {
     background-color: #111344;
+    color:#F9CFF2
 }
 #inspiration {
     background-color: #111344;
     padding-top: 40px;
     padding-bottom: 40px;
+    color:#F9CFF2
 }
