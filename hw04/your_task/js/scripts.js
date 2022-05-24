@@ -147,6 +147,7 @@ const handleTrackClick = (ev) => {
   console.log(previewUrl);
   audioPlayer.setAudioFile(previewUrl);
   audioPlayer.play();
+  document.querySelector('footer .track-item').innerHTML = ev.currentTarget.innerHTML;
 };
 
 document.querySelector("#search").onkeyup = (ev) => {
