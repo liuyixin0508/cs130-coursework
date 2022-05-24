@@ -28,7 +28,10 @@ const getTracks = (term) => {
         console.log(firstFive[0]);
 
         //   covnvert to html
-        let html = firstFive.map(track2Html);
+        let html ="";
+        for (item of firstFive){
+          html+= track2Html(item);
+        }
 
         //  plug it back to the index.html file
         document.querySelector("#tracks").innerHTML = html;
@@ -57,15 +60,52 @@ const track2Html = (track) => {
 getTracks("");
 
 const getAlbums = (term) => {
-  console.log(`
-        get albums from spotify based on the search term
-        "${term}" and load them into the #albums section 
-        of the DOM...`);
+  let url = `https://www.apitutor.org/spotify/simple/v1/search?type=album&q=${term}`;
+  fetch(url)
+    .then((response) => response.json())
+    .then((data) => {
+      if (data.length > 0) {
+        let firstAlbum = data;
+
+        console.log(firstAlbum[0]);
+
+        //   covnvert to html
+        let html = "";
+        for (item of firstAlbum){
+          html += albums2Html(item);
+
+        }
+        
+        //   create a function that converts this data to html
+
+        // plug that html into the index.html file
+        document.querySelector("#albums").innerHTML = html;
+      } else {
+        let html = "<p> No albums have been found </p>";
+        document.querySelector("#albums").innerHTML = html;
+      }
+    });
 };
+
+const albums2Html = (albums) => {
+  return `
+    <section class="album-card" id=${albums.id}>
+        <div>
+            <img src=${albums.image_url}>
+            <h2>${albums.name}</h2>
+            <div class="footer">
+                <a href=${albums.spotify_url} target="_blank">
+                    view on spotify
+                </a>
+            </div>
+        </div>
+    </section>  `;
+};
+
+getAlbums("");
 
 const getArtist = (term) => {
   let url = `https://www.apitutor.org/spotify/simple/v1/search?type=artist&q=${term}`;
-
   fetch(url)
     .then((response) => response.json())
     .then((data) => {
@@ -100,11 +140,13 @@ const artist2Html = (artist) => {
     </section>  `;
 };
 
-getArtist("Lady gaga");
+getArtist("");
 
 const handleTrackClick = (ev) => {
   const previewUrl = ev.currentTarget.getAttribute("data-preview-track");
   console.log(previewUrl);
+  audioPlayer.setAudioFile(previewUrl);
+  audioPlayer.play();
 };
 
 document.querySelector("#search").onkeyup = (ev) => {
